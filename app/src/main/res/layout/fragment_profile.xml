@@ -26,8 +26,8 @@
 
                 <Button
                     android:id="@+id/btn_LogOut"
-                    android:layout_width="120dp"
-                    android:layout_height="46dp"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="16dp"
                     android:layout_marginLeft="10dp"
@@ -36,7 +36,7 @@
                     android:backgroundTint="@color/white_black"
                     android:textAllCaps="false"
                     android:textColor="@color/my_green"
-                    android:textSize="18dp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:id="@+id/edit_profile_information"
@@ -57,12 +57,11 @@
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="0dp"
-                android:src="@drawable/profile_icon"
-                android:gravity="center"
-                android:textAlignment="center"
-                android:textColor="@color/orange"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:adjustViewBounds="true"
+                android:contentDescription="main_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/taylor_swift"
+                android:gravity="center" />
 
 
             <TextView
@@ -78,8 +77,60 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/btn_article"
+                android:layout_width="120dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="60dp"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Article"
+                android:backgroundTint="@color/white_black"
+                android:textAllCaps="false"
+                android:textColor="@color/my_green"
+                android:textSize="18dp" />
 
+            <Button
+                android:id="@+id/btn_Species"
+                android:layout_width="120dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Species"
+                android:backgroundTint="@color/white_black"
+                android:textAllCaps="false"
+                android:textColor="@color/my_green"
+                android:textSize="18dp" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/collected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Your collected plants"
+            android:textColor="@color/white_black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/plant_pic"
+            android:layout_width="330dp"
+            android:layout_height="330dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/photography_3"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/orange"
+            android:textSize="20dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </FrameLayout>
