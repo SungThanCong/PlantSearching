@@ -41,7 +41,7 @@
                 android:id="@+id/Edit1_avt"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:src="@drawable/profile_icon"/>
+                android:src="@drawable/taylor_swift"/>
         </RelativeLayout>
 
 
