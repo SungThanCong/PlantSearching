@@ -3,12 +3,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.ProfileFragment">
-
+    tools:context=".Fragment.ProfileFragment"
+    android:background="@color/white"
+    android:paddingTop="0dp"
+    android:paddingBottom="60dp">
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/profile_bg"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/edit_profile_information"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="330dp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:text="Edit"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+            <ImageView
+                android:id="@+id/btnEdit"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:background="@color/white_black"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/orange"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="CAMVAN"
+                android:textColor="@color/white_black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 
 </FrameLayout>

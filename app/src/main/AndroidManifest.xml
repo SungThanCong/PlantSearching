@@ -12,15 +12,6 @@
         android:theme="@style/Theme.PlantSearching"
         tools:targetApi="31">
         <activity
-            android:name=".SpeciesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ArticleDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ArticleActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

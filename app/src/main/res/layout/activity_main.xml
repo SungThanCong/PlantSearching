@@ -52,16 +52,14 @@
     </com.google.android.material.bottomappbar.BottomAppBar>
 
 
-    <com.github.clans.fab.FloatingActionButton
-        android:id="@+id/set_weigh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_anchor="@id/bottomAppBar"
-        app:layout_anchorGravity="center_horizontal"
-        android:src="@drawable/plus_icon"
-        app:fab_colorNormal="#48A2F5"
-        app:fab_colorPressed="#58C892"
-        app:fab_size="normal" />
+<!--    <com.github.clans.fab.FloatingActionButton-->
+<!--        android:id="@+id/set_weigh"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/ic_weight_scale"-->
+<!--        app:fab_colorNormal="@color/cardview_light_background"-->
+<!--        app:fab_colorPressed="#58C892"-->
+<!--        app:fab_size="normal" />-->
 
 
 
