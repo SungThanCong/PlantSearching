@@ -18,22 +18,24 @@ public class PhotographyAdapter extends RecyclerView.Adapter<PhotographyAdapter.
 
     private Context context;
     private ArrayList<String> data;
+    LayoutInflater layoutInflater;
 
     public PhotographyAdapter(Context context, ArrayList<String>data){
         this.context = context;
         this.data = data;
+        layoutInflater = LayoutInflater.from(context);
+
     }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).
-                inflate(R.layout.listview_photography_item,parent,false);
+        View view = layoutInflater.inflate(R.layout.listview_photography_item,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Picasso.get().load(data.get(position)).into(holder.image);
+        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/plan-app-3f6f5.appspot.com/o/photography%2Fphotography_1.png?alt=media&token=d2ea54f4-21a1-4465-bb52-37c2f16669e4").into(holder.image);
 
     }
 
@@ -47,7 +49,6 @@ public class PhotographyAdapter extends RecyclerView.Adapter<PhotographyAdapter.
         ImageView image;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
             image = itemView.findViewById(R.id.image);
 
         }
