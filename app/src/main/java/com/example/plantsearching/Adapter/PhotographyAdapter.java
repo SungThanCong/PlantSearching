@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.plantsearching.R;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -35,7 +35,9 @@ public class PhotographyAdapter extends RecyclerView.Adapter<PhotographyAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/plan-app-3f6f5.appspot.com/o/photography%2Fphotography_1.png?alt=media&token=d2ea54f4-21a1-4465-bb52-37c2f16669e4").into(holder.image);
+        Glide.with(holder.image)
+                .load(data.get(position))
+                .into(holder.image);
 
     }
 

@@ -83,12 +83,12 @@
                         />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-            <ListView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/lsv_article"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 />
         </LinearLayout>
     </LinearLayout>

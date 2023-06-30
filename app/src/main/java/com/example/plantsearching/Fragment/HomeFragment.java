@@ -3,6 +3,7 @@ package com.example.plantsearching.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,7 +16,16 @@ import android.widget.ListView;
 
 import com.example.plantsearching.Adapter.PhotographyAdapter;
 import com.example.plantsearching.ArticleActivity;
+import com.example.plantsearching.CameraActivity;
 import com.example.plantsearching.R;
+import com.example.plantsearching.SpeciesActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,12 +33,11 @@ import java.util.Arrays;
 public class HomeFragment extends Fragment {
 
     CardView btn_to_article;
+    CardView linkToSpecies,linkToCamera;
     RecyclerView lsvPhotography;
-    ArrayList<String> photographyData = new ArrayList<String>(Arrays.asList(
-            "https://firebasestorage.googleapis.com/v0/b/plan-app-3f6f5.appspot.com/o/photography%2Fphotography_1.png?alt=media&token=d2ea54f4-21a1-4465-bb52-37c2f16669e4"
-            ,"https://firebasestorage.googleapis.com/v0/b/plan-app-3f6f5.appspot.com/o/photography%2Fphotography_1.png?alt=media&token=d2ea54f4-21a1-4465-bb52-37c2f16669e4"
-            ,"https://firebasestorage.googleapis.com/v0/b/plan-app-3f6f5.appspot.com/o/photography%2Fphotography_1.png?alt=media&token=d2ea54f4-21a1-4465-bb52-37c2f16669e4"));
+    ArrayList<String> photographyData = new ArrayList<String>();
     PhotographyAdapter adapter;
+    FirebaseFirestore firestore = FirebaseFirestore.getInstance();
     public HomeFragment() {
 
     }
@@ -42,7 +51,6 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -52,14 +60,34 @@ public class HomeFragment extends Fragment {
 
         btn_to_article = view.findViewById(R.id.btn_to_article);
         lsvPhotography = view.findViewById(R.id.lsvPhotography);
+        linkToSpecies = view.findViewById(R.id.linkToSpecies);
+        linkToCamera = view.findViewById(R.id.linkToCamera);
+        loadData();
 
-        lsvPhotography.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
-        adapter = new PhotographyAdapter(getActivity(),photographyData);
-        lsvPhotography.setAdapter(adapter);
+
 
         addEvents();
 
         return view;
+    }
+
+    private void loadData() {
+        firestore.collection("photography").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    QuerySnapshot queryDocumentSnapshot = task.getResult();
+                    if(!queryDocumentSnapshot.isEmpty()){
+                        for(DocumentSnapshot document : queryDocumentSnapshot){
+                            photographyData.add(document.getString("source"));
+                        }
+                        lsvPhotography.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+                        adapter = new PhotographyAdapter(getActivity(),photographyData);
+                        lsvPhotography.setAdapter(adapter);
+                    }
+                }
+            }
+        });
     }
 
     private void addEvents() {
@@ -70,6 +98,20 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        linkToSpecies.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SpeciesActivity.class);
+                startActivity(intent);
+            }
+        });
 
+        linkToCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), CameraActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
