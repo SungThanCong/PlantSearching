@@ -18,20 +18,43 @@
             android:name=".SpeciesActivity"
             android:exported="false" />
         <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IntroduceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Intro2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Introduce2Activity"
+            android:exported="true" />
+        <activity
             android:name=".ArticleDetailActivity"
             android:exported="false" />
         <activity
             android:name=".ArticleActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".EditProfileActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>

@@ -43,7 +43,7 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/satoshi_medium"
         android:hint="Full name"
-        android:textColor="@color/white"
+        android:textColor="@color/white_black"
         android:textColorHint="@color/my_white_6"
         android:textSize="17dp"></EditText>
 
@@ -57,7 +57,7 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/satoshi_medium"
         android:hint="Email"
-        android:textColor="@color/white"
+        android:textColor="@color/white_black"
         android:textColorHint="@color/my_white_6"
         android:textSize="17dp">
     </EditText>
@@ -70,7 +70,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="20dp"
-        android:textColor="@color/white"
+        android:textColor="@color/white_black"
         android:fontFamily="@font/satoshi_medium"
         android:hint="Password"
         android:inputType="textPassword"
