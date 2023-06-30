@@ -12,6 +12,9 @@
         android:theme="@style/Theme.PlantSearching"
         tools:targetApi="31">
         <activity
+            android:name=".ListPlantScreen"
+            android:exported="false" />
+        <activity
             android:name=".SpeciesActivity"
             android:exported="false" />
         <activity
