@@ -14,7 +14,7 @@
         tools:ignore="ScrollViewSize">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/title_view"
+            android:id="@+id/article_banner"
             android:layout_width="match_parent"
             android:layout_height="280dp"
             android:background="@drawable/template_article_detail"
@@ -42,6 +42,7 @@
             android:layout_margin="20dp"
             android:orientation="vertical">
             <HorizontalScrollView
+                android:id="@+id/article_tag"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp">
@@ -88,6 +89,7 @@
 
             </HorizontalScrollView>
             <TextView
+                android:id="@+id/article_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Even on Urban Excursions,
@@ -113,7 +115,7 @@ Finding Mother Nature's Charms"
                     >
 
                     <ImageView
-                        android:id="@+id/figma_custom_icon"
+                        android:id="@+id/article_avatar"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
@@ -128,6 +130,7 @@ Finding Mother Nature's Charms"
                     android:orientation="vertical"
                     android:layout_marginStart="20dp">
                     <TextView
+                        android:id="@+id/article_username"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
@@ -135,6 +138,7 @@ Finding Mother Nature's Charms"
                         android:textStyle="bold"
                         android:text="Alexender"/>
                     <TextView
+                        android:id="@+id/article_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
@@ -147,6 +151,7 @@ Finding Mother Nature's Charms"
                 android:layout_marginTop="10dp"
                 >
                 <TextView
+                    android:id="@+id/article_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Public parks aside, getting a dose of nature can
